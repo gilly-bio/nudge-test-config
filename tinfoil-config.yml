@@ -1,9 +1,9 @@
-# The nudge brain's Tinfoil configuration, release t0.1.2. Rendered by nudge_infra.deploy from a
+# The nudge brain's Tinfoil configuration, release t0.1.3. Rendered by nudge_infra.deploy from a
 # values file; don't edit it by hand. Everything here is public and measured: a phone checks this release
 # before it grants the brain a user's key. What each part is for: infra/deploy/README.md in the brain's repo.
 cvm-version: "0.14.17"
 cpus: 2
-memory: 16384
+memory: 8192
 
 # Our keyserver (tinfoilsh/keyserver). It releases the secrets below at every boot, only to a release and
 # domain our approver let in, or the enclave doesn't boot.
@@ -39,7 +39,7 @@ containers:
       start_period: 2m
     env:
       - NUDGE_REPO: "gilly-bio/nudge-test-config"
-      - NUDGE_RELEASE: "t0.1.2"
+      - NUDGE_RELEASE: "t0.1.3"
       - NUDGE_MODEL_BACKEND: "live"
       - NUDGE_MODEL_BASE: "http://model-proxy:3301/v1"
       - NUDGE_IMAGE_DIGEST: "sha256:6a9503767ad2701a30f45ed8c81f3d2780810cbe0770d1b796abcd6dcc850817"
