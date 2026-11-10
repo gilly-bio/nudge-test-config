@@ -1,4 +1,4 @@
-# The nudge brain's Tinfoil configuration, release t0.1.3. Rendered by nudge_infra.deploy from a
+# The nudge brain's Tinfoil configuration, release t0.1.4. Rendered by nudge_infra.deploy from a
 # values file; don't edit it by hand. Everything here is public and measured: a phone checks this release
 # before it grants the brain a user's key. What each part is for: infra/deploy/README.md in the brain's repo.
 cvm-version: "0.14.17"
@@ -27,7 +27,7 @@ networks:
 
 containers:
   - name: brain
-    image: "ghcr.io/gilly-bio/nudge-beta-brain@sha256:6a9503767ad2701a30f45ed8c81f3d2780810cbe0770d1b796abcd6dcc850817"
+    image: "ghcr.io/gilly-bio/nudge-beta-brain@sha256:9b98ed326a688bec1a719a01a29d2b496c98fab5a359ea8863ba91ab5f206a66"
     networks: [brain-out, model]
     restart: always
     tmpfs:
@@ -39,10 +39,10 @@ containers:
       start_period: 2m
     env:
       - NUDGE_REPO: "gilly-bio/nudge-test-config"
-      - NUDGE_RELEASE: "t0.1.3"
+      - NUDGE_RELEASE: "t0.1.4"
       - NUDGE_MODEL_BACKEND: "live"
       - NUDGE_MODEL_BASE: "http://model-proxy:3301/v1"
-      - NUDGE_IMAGE_DIGEST: "sha256:6a9503767ad2701a30f45ed8c81f3d2780810cbe0770d1b796abcd6dcc850817"
+      - NUDGE_IMAGE_DIGEST: "sha256:9b98ed326a688bec1a719a01a29d2b496c98fab5a359ea8863ba91ab5f206a66"
       - NUDGE_STORE: "s3"
       - NUDGE_S3_ENDPOINT: "https://80b36accfd5e10673ef2f7b953b9f0cd.r2.cloudflarestorage.com"
       - NUDGE_S3_BUCKET: "nudge-beta-test"
