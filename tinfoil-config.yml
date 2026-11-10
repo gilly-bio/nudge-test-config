@@ -1,4 +1,4 @@
-# The nudge brain's Tinfoil configuration, release t0.1.5. Rendered by nudge_infra.deploy from a
+# The nudge brain's Tinfoil configuration, release t0.1.6. Rendered by nudge_infra.deploy from a
 # values file; don't edit it by hand. Everything here is public and measured: a phone checks this release
 # before it grants the brain a user's key. What each part is for: infra/deploy/README.md in the brain's repo.
 cvm-version: "0.14.17"
@@ -19,6 +19,7 @@ networks:
     egress: allowlist
     allow:
       - "inference.tinfoil.sh"
+      - "router-0.tinfoil.sh"
       - "atc.tinfoil.sh"
       - "github-proxy.tinfoil.sh"
       - "kds-proxy.tinfoil.sh"
@@ -39,7 +40,7 @@ containers:
       start_period: 2m
     env:
       - NUDGE_REPO: "gilly-bio/nudge-test-config"
-      - NUDGE_RELEASE: "t0.1.5"
+      - NUDGE_RELEASE: "t0.1.6"
       - NUDGE_MODEL_BACKEND: "live"
       - NUDGE_MODEL_BASE: "http://model-proxy:3301/v1"
       - NUDGE_IMAGE_DIGEST: "sha256:ba55f4eec3327ac5446ecbbe4bdeb296804e4a783ae07ef3d3bf4e4561011769"
